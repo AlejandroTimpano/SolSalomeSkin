@@ -1,0 +1,56 @@
+
+/* Variables de color para tema claro/oscuro sin romper el diseño */
+/* Tema claro por defecto (coincide con el branding existente) */
+:root{
+  --bg: #fff6fa;
+  --card: #ffffff;
+  --muted: #d88dab;
+  --brand: #ff4fa3;
+  --brand-2: #ffc0d9;
+  --text: #403040;
+  --text-dim: #7a627a;
+  --border: #f0d8e5;
+  --accent: #ffd166;
+  --shadow: rgba(0,0,0,.08);
+}
+
+/* Tema oscuro preferido por sistema */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #1b121b;
+    --card: #221822;
+    --muted: #c68aa8;
+    --brand: #ff5fb0;
+    --brand-2: #ffb7d6;
+    --text: #f0e8f0;
+    --text-dim: #c4b4c4;
+    --border: #3b293a;
+    --accent: #e7b85a;
+    --shadow: rgba(0,0,0,.35);
+  }
+}
+
+/* Forzado por toggle: [data-theme="dark"] tiene prioridad sobre media query */
+html[data-theme="dark"]{
+  --bg: #1b121b;
+  --card: #221822;
+  --muted: #c68aa8;
+  --brand: #ff5fb0;
+  --brand-2: #ffb7d6;
+  --text: #f0e8f0;
+  --text-dim: #c4b4c4;
+  --border: #3b293a;
+  --accent: #e7b85a;
+  --shadow: rgba(0,0,0,.35);
+}
+
+/* Botón de tema: variante discreta acorde a la UI */
+.theme-toggle{
+  display:inline-flex; align-items:center; gap:.4rem;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  padding:.45rem .7rem; border-radius:999px; font-weight:600; cursor:pointer;
+}
+.theme-toggle:hover{ filter:saturate(115%) }
+.theme-toggle svg{ width:18px; height:18px; }

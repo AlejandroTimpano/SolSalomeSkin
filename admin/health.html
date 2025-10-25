@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diagnóstico Firebase — Sol Salome Skin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <style>
+    .wrap{max-width:900px;margin:0 auto;padding:24px}
+    .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 6px 14px var(--shadow)}
+    h1{margin:0 0 .4rem}
+    .muted{color:var(--text-dim)}
+    button{margin:.6rem 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Diagnóstico Firebase</h1>
+    <p class="muted">Probá la conexión de Firebase/Firestore antes de entregar.</p>
+    <div class="panel">
+      <ol id="health-log"></ol>
+      <p id="health-summary" class="muted"></p>
+      <button class="btn" id="run-health" type="button">Probar Firebase ahora</button>
+      <p class="muted" style="margin-top:.6rem">Asegurate de haber completado <code>assets/js/firebase-config.js</code>.</p>
+    </div>
+    <p style="margin-top:1rem"><a href="../index.html">← Volver al sitio</a></p>
+  </div>
+  <script src="../assets/js/firebase-config.js"></script>
+  <script defer src="../assets/js/health.js"></script>
+</body>
+</html>

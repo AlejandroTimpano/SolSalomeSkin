@@ -1,0 +1,1 @@
+form{display:grid;gap:.8rem;max-width:820px;margin:auto}input,textarea,select{width:100%;padding:.9rem 1rem;border-radius:12px;border:1px solid var(--border);background:#fff;color:#403040}input:focus,textarea:focus,select:focus{outline:2px solid var(--brand)}.help{font-size:.9rem;color:var(--text-dim)}#t_list li{margin:.2rem 0}

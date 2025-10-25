@@ -1,0 +1,1 @@
+.timeline{position:relative;margin:1rem 0 0;padding-left:1rem}.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--brand),transparent);border-radius:3px}.tl-item{margin:0 0 1rem 0;padding-left:.4rem}.tl-item h4{margin:.2rem 0;color:var(--brand)}
