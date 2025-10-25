@@ -9,89 +9,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ff4fa3'/%3E%3Cstop offset='1' stop-color='%23ffc0d9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect rx='56' ry='56' width='256' height='256' fill='%23fff6fa'/%3E%3Cg fill='url(%23g)'%3E%3Ccircle cx='128' cy='128' r='64' opacity='.2'/%3E%3Cpath d='M128 64c24 0 48 16 48 40 0 40-48 32-48 56 0 8 8 16 24 16-16 8-32 0-32-16 0-32 48-28 48-56 0-16-16-24-40-24z'/%3E%3C/g%3E%3C/svg%3E" />
-  <style>
-    :root{
-      --bg: #fff6fa;
-      --card: #ffffff;
-      --muted: #d88dab;
-      --brand: #ff4fa3; /* rosa fuerte */
-      --brand-2: #ffc0d9; /* rosa suave */
-      --text: #403040;
-      --text-dim: #7a627a;
-      --border: #f0d8e5;
-      --accent: #ffd166;
-      --shadow: rgba(0,0,0,.08);
-    }
-    *{box-sizing: border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-    h1,h2,h3{font-family:'Playfair Display',serif; margin:0 0 .6rem; color:var(--brand)}
-    p{margin:.2rem 0 1rem; line-height:1.65}
-    a{color:var(--brand)}
-
-    .container{max-width:1100px; margin:0 auto; padding:0 1.2rem}
-    .grid{display:grid; gap:1rem}
-
-    /* Navbar */
-    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background:rgba(255,246,250,.85); border-bottom:1px solid var(--border)}
-    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
-    .brand{display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.5px; color:var(--brand); text-decoration:none}
-    .brand svg{width:36px; height:36px}
-    .links{display:flex; gap:1rem}
-    .links a{color:var(--text); font-weight:600; opacity:.85; text-decoration:none}
-    .links a:hover{opacity:1; color:var(--brand)}
-    .hamburger{display:none; background:none; border:none; color:var(--text); font-size:1.5rem}
-    @media (max-width: 760px){
-      .links{display:none}
-      .links.open{display:flex; flex-direction:column; gap:.8rem; padding:.8rem 0}
-      .hamburger{display:block}
-    }
-
-    /* Hero */
-    .hero{position:relative; padding:72px 0 36px; overflow:hidden; text-align:center}
-    .hero .bg-shape{position:absolute; inset:-20% -10% auto auto; width:65vw; height:65vw; max-width:880px; max-height:880px; border-radius:50%; filter:blur(70px); background:radial-gradient(closest-side, rgba(255,79,163,.2), transparent 65%)}
-    .hero .heading{font-size:clamp(2rem, 5vw, 3.2rem); line-height:1.1}
-    .kpis{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-top:1.2rem}
-    .kpi{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:1rem; text-align:center; box-shadow:0 6px 14px var(--shadow)}
-    .kpi .big{font-size:1.6rem; font-weight:800; color:var(--brand)}
-    .kpi small{color:var(--text-dim)}
-    @media (max-width: 760px){ .kpis{grid-template-columns:repeat(2,minmax(0,1fr));} }
-
-    /* Section */
-    section{padding:42px 0; border-top:1px solid var(--border)}
-    .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:18px; flex-wrap:wrap}
-    .eyebrow{font-size:.85rem; color:var(--muted); letter-spacing:.16em; text-transform:uppercase}
-
-    /* Cards */
-    .cards{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem}
-    .card{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:1rem; box-shadow:0 6px 14px var(--shadow)}
-    .card img{width:100%; height: 500px; object-fit:cover; border-radius:12px}
-    .chips{display:flex; gap:.4rem; flex-wrap:wrap; margin:.4rem 0 .6rem}
-    .chip{font-size:.75rem; border:1px solid var(--border); padding:.25rem .5rem; border-radius:999px; color:var(--brand)}
-    @media (max-width: 960px){ .cards{grid-template-columns:repeat(2,minmax(0,1fr));} }
-    @media (max-width: 640px){ .cards{grid-template-columns:1fr;} }
-
-    /* Timeline */
-    .timeline{position:relative; margin:1rem 0 0; padding-left:1rem}
-    .timeline::before{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(var(--brand),transparent); border-radius:3px}
-    .tl-item{margin:0 0 1rem 0; padding-left:.4rem}
-    .tl-item h4{margin:.2rem 0; color:var(--brand)}
-    .muted{color:var(--text-dim)}
-
-    /* Contacto */
-    form{display:grid; gap:.8rem; max-width:720px; margin:auto}
-    input, textarea, select{width:100%; padding:.9rem 1rem; border-radius:12px; border:1px solid var(--border); background:#fff; color:var(--text)}
-    input:focus, textarea:focus, select:focus{outline:2px solid var(--brand)}
-    .btn{display:inline-block; border:none; padding:.9rem 1.1rem; border-radius:12px; font-weight:700; cursor:pointer; color:#fff; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 6px 14px var(--shadow)}
-    .btn:hover{filter:saturate(115%)}
-
-    footer{padding:28px 0; border-top:1px solid var(--border); color:var(--text-dim)}
-    .footer-grid{display:grid; grid-template-columns:1fr auto; gap:1rem}
-    @media (max-width:760px){ .footer-grid{grid-template-columns:1fr} }
-  </style>
+  <!-- considerandos: meta SEO/OG/Twitter/misc (no intrusivos) -->
+  <meta name="author" content="Sol Salome Skin">
+  <meta name="keywords" content="skincare, belleza, crema, sérum, protector solar, Sol Salome Skin">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="notranslate" content="no">
+  <meta name="application-name" content="Sol Salome Skin">
+  <meta name="theme-color" content="#ff4fa3">
+  <meta http-equiv="content-language" content="es">
+  <meta name="rating" content="general">
+  <meta name="generator" content="Edición manual">
+  <!-- <meta http-equiv="refresh" content="30"> -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sol Salome Skin — Belleza & Skincare">
+  <meta property="og:description" content="Sitio de belleza y skincare con estética femenina y vibrante.">
+  <meta property="og:url" content="#">
+  <meta property="og:image" content="https://i.pinimg.com/736x/1b/46/bf/1b46bf061d996a09c6a6c2aa4d088c2c.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sol Salome Skin — Belleza & Skincare">
+  <meta name="twitter:description" content="Sitio de belleza y skincare con estética femenina y vibrante.">
+  <meta name="twitter:image" content="https://i.pinimg.com/736x/1b/46/bf/1b46bf061d996a09c6a6c2aa4d088c2c.jpg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#home">Saltar al contenido</a>
   <!-- NAVBAR -->
-  <nav class="nav">
+  <nav class="nav" role="navigation">
     <div class="container nav-inner">
       <a href="#home" class="brand">
         <!-- Inline SVG logo -->
@@ -109,7 +54,7 @@
         </svg>
         <span>Sol Salome Skin</span>
       </a>
-      <button class="hamburger" aria-label="Abrir menú">☰</button>
+      <button class="hamburger" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">☰</button>
       <div id="menu" class="links">
         <a href="#home">Inicio</a>
         <a href="#productos">Productos</a>
@@ -121,7 +66,7 @@
   </nav>
 
   <!-- HERO -->
-  <header id="home" class="hero">
+  <header id="home" class="hero" role="banner">
     <div class="bg-shape"></div>
     <div class="container">
       <p class="eyebrow">Skincare</p>
@@ -160,7 +105,7 @@
       </div>
       <div class="cards">
         <article class="card">
-          <img src="https://i.pinimg.com/736x/1b/46/bf/1b46bf061d996a09c6a6c2aa4d088c2c.jpg" alt="Crema hidratante"/>
+          <img src="https://i.pinimg.com/736x/1b/46/bf/1b46bf061d996a09c6a6c2aa4d088c2c.jpg" alt="Crema hidratante" loading="lazy"/>
           <h3>Hydra Cream</h3>
           <div class="chips">
             <span class="chip">Hidratación</span>
@@ -169,7 +114,7 @@
           <p>Crema ligera de rápida absorción con ácido hialurónico.</p>
         </article>
         <article class="card">
-          <img src="https://i.pinimg.com/736x/5a/17/94/5a1794b888498c6910320118b621fec7.jpg" alt="Sérum facial"/>
+          <img src="https://i.pinimg.com/736x/5a/17/94/5a1794b888498c6910320118b621fec7.jpg" alt="Sérum facial" loading="lazy"/>
           <h3>Glow Serum</h3>
           <div class="chips">
             <span class="chip">Vitamina C</span>
@@ -178,7 +123,7 @@
           <p>Ilumina tu piel y reduce manchas para un tono uniforme.</p>
         </article>
         <article class="card">
-          <img src="https://i.pinimg.com/1200x/db/5c/60/db5c60f5102a249cddc49f62e0326322.jpg" alt="Protector solar"/>
+          <img src="https://i.pinimg.com/1200x/db/5c/60/db5c60f5102a249cddc49f62e0326322.jpg" alt="Protector solar" loading="lazy"/>
           <h3>Sun Shield SPF50</h3>
           <div class="chips">
             <span class="chip">Protección UVA/UVB</span>
@@ -232,17 +177,17 @@
       </div>
       <div class="cards">
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1598514982301-4a06f3bf0bbd?q=80&w=1400&auto=format&fit=crop" alt="Mujer tomando agua"/>
+          <img src="https://images.unsplash.com/photo-1598514982301-4a06f3bf0bbd?q=80&w=1400&auto=format&fit=crop" alt="Mujer tomando agua" loading="lazy"/>
           <h3>Hidratate</h3>
           <p>Tomar suficiente agua es el primer paso hacia una piel radiante.</p>
         </article>
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1400&auto=format&fit=crop" alt="Frutas y verduras frescas"/>
+          <img src="https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1400&auto=format&fit=crop" alt="Frutas y verduras frescas" loading="lazy"/>
           <h3>Nutrición</h3>
           <p>Alimentate con frutas y verduras ricas en antioxidantes.</p>
         </article>
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1598300056393-4ffcc14c3a5b?q=80&w=1400&auto=format&fit=crop" alt="Mujer relajada"/>
+          <img src="https://images.unsplash.com/photo-1598300056393-4ffcc14c3a5b?q=80&w=1400&auto=format&fit=crop" alt="Mujer relajada" loading="lazy"/>
           <h3>Descanso</h3>
           <p>Dormir bien ayuda a la regeneración celular de la piel.</p>
         </article>
@@ -264,16 +209,16 @@
         <div class="grid" style="grid-template-columns:1fr 1fr; gap:.8rem">
           <label>
             <span class="muted">Nombre</span>
-            <input required type="text" name="nombre" placeholder="Tu nombre" />
+            <input required type="text" name="nombre" placeholder="Tu nombre" autocomplete="name"/>
           </label>
           <label>
             <span class="muted">Email</span>
-            <input required type="email" name="email" placeholder="tu@email.com" />
+            <input required type="email" name="email" placeholder="tu@email.com" autocomplete="email" inputmode="email"/>
           </label>
         </div>
         <label>
           <span class="muted">Motivo</span>
-          <select name="motivo">
+          <select name="motivo" id="motivo">
             <option>Consulta general</option>
             <option>Asesoría de rutina</option>
             <option>Distribuidores</option>
@@ -288,7 +233,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="container footer-grid">
       <div>
         <strong>Sol Salome Skin</strong> — © 2025 | Skincare con amor y ciencia.
@@ -299,25 +244,7 @@
     </div>
   </footer>
 
-  <script>
-    const btn = document.querySelector('.hamburger');
-    const menu = document.getElementById('menu');
-    btn?.addEventListener('click', () => {
-      const opened = menu.classList.toggle('open');
-      btn.setAttribute('aria-expanded', opened ? 'true' : 'false');
-    });
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
-        if(el){
-          e.preventDefault();
-          el.scrollIntoView({behavior:'smooth', block:'start'});
-          menu.classList.remove('open');
-          btn.setAttribute('aria-expanded','false');
-        }
-      })
-    });
-  </script>
+  <script defer src="assets/js/main.js"></script>
+  <noscript>Este sitio funciona sin JavaScript, pero algunas funciones pueden estar limitadas.</noscript>
 </body>
 </html>

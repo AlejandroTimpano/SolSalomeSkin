@@ -1,0 +1,10 @@
+{
+  "name": "Sol Salome Skin",
+  "short_name": "SSS",
+  "description": "Sitio de belleza y skincare con estética femenina y vibrante.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fff6fa",
+  "theme_color": "#ff4fa3",
+  "icons": []
+}
