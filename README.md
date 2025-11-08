@@ -1,1 +1,0 @@
-Sitio multipágina con turnos Firebase. Editá assets/js/firebase-config.js con tu configuración. Reglas Firestore en el mensaje del asistente.

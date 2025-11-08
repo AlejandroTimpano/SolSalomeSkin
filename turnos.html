@@ -1,38 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Turnos — Sol Salome Skin</title>
-<meta name="description" content="Sol Salome Skin — Belleza y skincare con estética femenina y vibrante." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ff4fa3'/%3E%3Cstop offset='1' stop-color='%23ffc0d9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect rx='56' ry='56' width='256' height='256' fill='%23fff6fa'/%3E%3Cg fill='url(%23g)'%3E%3Ccircle cx='128' cy='128' r='64' opacity='.2'/%3E%3Cpath d='M128 64c24 0 48 16 48 40 0 40-48 32-48 56 0 8 8 16 24 16-16 8-32 0-32-16 0-32 48-28 48-56 0-16-16-24-40-24z'/%3E%3C/g%3E%3C/svg%3E">
-\1<link rel="stylesheet" href="assets/css/theme.css"><link rel="stylesheet" href="assets/css/turnos.css">
-<link rel="stylesheet" href="assets/css/base.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Turnos — Sol Salome Skin</title>
+  <meta name="description" content="Reservá turnos de lunes a sábado, de 9 a 19, cada 2 horas — Sol Salome Skin." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/turnos.css">
 </head>
 <body>
-<a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
-<nav class="nav" role="navigation">
-<div class="container nav-inner">
-<a href="index.html" class="brand" aria-label="Inicio">
-<svg viewBox="0 0 256 256" role="img" aria-label="Logo Sol Salome Skin" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ff4fa3"/><stop offset="1" stop-color="#ffc0d9"/></linearGradient></defs><g fill="url(#g)"><circle cx="128" cy="128" r="64" opacity=".2"/><path d="M128 64c24 0 48 16 48 40 0 40-48 32-48 56 0 8 8 16 24 16-16 8-32 0-32-16 0-32 48-28 48-56 0-16-16-24-40-24z"/></g></svg>
-<span>Sol Salome Skin</span></a>
-<button class="hamburger" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">☰</button>
-<div id="menu" class="links">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false"><span class="icon" aria-hidden="true"></span><span class="label">Modo oscuro</span></button>
-<a  href="productos.html">Productos</a>
-<a  href="rutina.html">Rutinas</a>
-<a  href="tips.html">Tips</a>
-<a  href="contacto.html">Contacto</a>
-<a class="active" href="turnos.html">Turnos</a>
-</div>
-</div>
-</nav>
-<main id="contenido-principal" class="section"><div class="container"><div class="section-head"><div><p class="eyebrow">Reservas</p><h2>Tomar turno</h2></div><p class="muted">Lunes a sábado, de 9 a 19, en turnos de 2 horas. Los turnos no se superponen.</p></div><div class="card" role="region" aria-label="Formulario de turnos"><form id="turnos-form" novalidate><div class="grid" style="grid-template-columns:1fr 1fr; gap:.8rem"><div><label class="muted" for="t_nombre">Nombre y apellido</label><input required type="text" id="t_nombre" name="t_nombre" placeholder="Tu nombre completo" autocomplete="name"></div><div><label class="muted" for="t_email">Email</label><input required type="email" id="t_email" name="t_email" placeholder="tu@email.com" autocomplete="email" inputmode="email"></div></div><div class="grid" style="grid-template-columns:1fr 1fr; gap:.8rem"><div><label class="muted" for="t_fecha">Fecha</label><input required type="date" id="t_fecha" name="t_fecha" aria-describedby="help-fecha"><div id="help-fecha" class="help">Solo lunes a sábado.</div></div><div><label class="muted" for="t_hora">Hora</label><select required id="t_hora" name="t_hora" aria-describedby="help-hora"><option value="">Elegí horario…</option></select><div id="help-hora" class="help">Turnos cada 2 horas (09:00 a 17:00).</div></div></div><div><label class="muted" for="t_servicio">Servicio (opcional)</label><select id="t_servicio" name="t_servicio"><option value="">Seleccioná…</option><option>Limpieza facial</option><option>Hidratación profunda</option><option>Tratamiento vitamina C</option><option>Asesoría de rutina</option></select></div><div class="grid" style="grid-template-columns:1fr auto; gap:.8rem; align-items:end"><div><label class="muted" for="t_notas">Notas (opcional)</label><textarea id="t_notas" name="t_notas" rows="3" placeholder="Aclaraciones…"></textarea></div><div><button class="btn" type="submit">Reservar</button></div></div><div id="t_feedback" class="help" aria-live="polite" style="margin-top:.4rem"></div></form></div><div class="card" role="region" aria-label="Turnos del día"><h3 style="margin-top:.2rem">Turnos del día seleccionado</h3><ul id="t_list" class="muted" style="margin:.3rem 0 0; padding-left:1.2rem"></ul></div></div></main><script src="assets/js/firebase-config.js"></script><script defer src="assets/js/turnos.js"></script></main>
-<footer role="contentinfo"><div class="container footer-grid"><div><strong>Sol Salome Skin</strong> — © 2025 | Skincare con amor y ciencia.</div><div><a href="#contenido-principal">Volver arriba ↑</a></div></div></footer>
-<script defer src="assets/js/theme.js"></script>
-<script defer src="assets/js/common.js"></script>
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+  <!-- NAVBAR -->
+  <nav class="nav" role="navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Inicio">
+        <svg viewBox="0 0 256 256" role="img" aria-label="Logo Sol Salome Skin" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#ff4fa3"/>
+              <stop offset="1" stop-color="#ffc0d9"/>
+            </linearGradient>
+          </defs>
+          <g fill="url(#g)">
+            <circle cx="128" cy="128" r="64" opacity=".2"/>
+            <path d="M128 64c24 0 48 16 48 40 0 40-48 32-48 56 0 8 8 16 24 16-16 8-32 0-32-16 0-32 48-28 48-56 0-16-16-24-40-24z"/>
+          </g>
+        </svg>
+        <span>Sol Salome Skin</span>
+      </a>
+      <button class="hamburger" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">☰</button>
+      <div id="menu" class="links">
+        <a href="productos.html">Productos</a>
+        <a href="rutina.html">Rutinas</a>
+        <a href="tips.html">Tips</a>
+        <a href="contacto.html">Contacto</a>
+        <a class="active" href="turnos.html">Turnos</a>
+        <!-- Intencionalmente se quita "Carrito" en esta página -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+          <span class="icon" aria-hidden="true"></span>
+          <span class="sr-only">Modo oscuro</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <main id="contenido-principal" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Reservas</p>
+          <h2>Tomar turno</h2>
+        </div>
+        <p class="muted">Lunes a sábado, de 9 a 19, con turnos cada 2 horas. Los horarios no se superponen.</p>
+      </div>
+
+      <!-- Estado de reserva del navegador -->
+      <div id="booked_info" class="card" style="display:none" aria-live="polite"></div>
+
+      <div class="card" role="region" aria-label="Formulario de turnos">
+        <form id="turnos-form" novalidate>
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:.8rem">
+            <div>
+              <label class="muted" for="t_nombre">Nombre y apellido</label>
+              <input required type="text" id="t_nombre" name="t_nombre" placeholder="Tu nombre completo" autocomplete="name">
+            </div>
+            <div>
+              <label class="muted" for="t_email">Email</label>
+              <input required type="email" id="t_email" name="t_email" placeholder="tu@email.com" autocomplete="email" inputmode="email">
+            </div>
+          </div>
+
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:.8rem">
+            <div>
+              <label class="muted" for="t_fecha">Fecha</label>
+              <input required type="date" id="t_fecha" name="t_fecha" aria-describedby="help-fecha">
+              <div id="help-fecha" class="help">Solo lunes a sábado.</div>
+            </div>
+            <div>
+              <label class="muted" for="t_hora">Hora</label>
+              <select required id="t_hora" name="t_hora" aria-describedby="help-hora">
+                <option value="">Elegí horario…</option>
+              </select>
+              <div id="help-hora" class="help">Turnos de 2 horas (09:00, 11:00, 13:00, 15:00, 17:00).</div>
+            </div>
+          </div>
+
+          <div>
+            <label class="muted" for="t_servicio">Servicio (opcional)</label>
+            <select id="t_servicio" name="t_servicio">
+              <option value="">Seleccioná…</option>
+              <option>Limpieza facial</option>
+              <option>Hidratación profunda</option>
+              <option>Tratamiento vitamina C</option>
+              <option>Asesoría de rutina</option>
+            </select>
+          </div>
+
+          <div class="grid" style="grid-template-columns:1fr auto; gap:.8rem; align-items:end">
+            <div>
+              <label class="muted" for="t_notas">Notas (opcional)</label>
+              <textarea id="t_notas" name="t_notas" rows="3" placeholder="Aclaraciones…"></textarea>
+            </div>
+            <div>
+              <button class="btn" type="submit">Reservar</button>
+            </div>
+          </div>
+
+          <div id="t_feedback" class="help" aria-live="polite" style="margin-top:.4rem"></div>
+        </form>
+      </div>
+
+      <div class="card" role="region" aria-label="Turnos del día">
+        <h3 style="margin-top:.2rem">Turnos del día seleccionado</h3>
+        <ul id="t_list" class="muted" style="margin:.3rem 0 0; padding-left:1.2rem"></ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div><strong>Sol Salome Skin</strong> — © 2025 | Skincare con amor y ciencia.</div>
+      <div><a href="#contenido-principal">Volver arriba ↑</a></div>
+    </div>
+  </footer>
+
+  <!-- JS del sitio -->
+  <script defer src="assets/js/theme.js"></script>
+  <script defer src="assets/js/common.js"></script>
+  <!-- Ojo: no cargamos cart.js en esta página para evitar badge/carrito -->
+
+  <!-- Lógica de turnos SIN Firebase -->
+  <script defer src="assets/js/turnos.js"></script>
 </body>
 </html>
